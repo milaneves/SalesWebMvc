@@ -18,13 +18,13 @@ namespace SalesWebMvc.Data
         //populando a base de dados
         public void Seed()
         {
-            if ( _context.Department.Any() ||
-                 _context.Seller.Any() ||
-                _context.SalesRecord.Any()
-                )
-              {
-                return; //banco já foi populado
-              }
+            // if ( _context.Department.Any() ||
+             //    _context.Seller.Any() ||
+            //    _context.SalesRecord.Any()
+            //    )
+            //  {
+              //  return; //banco já foi populado
+            //  }
 
             //Department d1 = new Department("Mila");
 
