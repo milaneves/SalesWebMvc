@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -8,8 +9,21 @@ namespace SalesWebMvc.Models
     public class Seller
     {
         public int Id { get; set; }
+
+       /* [Required(ErrorMessage = "{0} Obrigatório")]
+        [Display(Name = "Nome")]*/
+        [StringLength(60, MinimumLength = 3, ErrorMessage = "O tamanho do {0} deve ser entre [2} e {1}")] //A chave 0 é o nome do atributo e a chave 
         public string Name { get; set; }
+
+        [Required(ErrorMessage = "{0} Obrigatório")]
+        [EmailAddress(ErrorMessage ="Email inválido")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
+
+        [Required(ErrorMessage = "{0} Obrigatório")]
+        [Display(Name = "Data de Nascimento")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime BirthDate { get; set; }
         public Department Department { get; set; }
         public int DepartmentId { get; set; }
